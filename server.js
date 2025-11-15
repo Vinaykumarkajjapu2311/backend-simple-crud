@@ -79,6 +79,7 @@ app.delete("/items/:id", (req, res) => {
   const idx = findIndex(id);
   if (idx === -1) return res.status(404).json({ error: "Not found" });
   const [deleted] = items.splice(idx, 1);
+  console.log("successfully deleted");
   res.json({ deleted });
 });
 
